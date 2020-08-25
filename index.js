@@ -94,6 +94,8 @@ document
   .addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
       event.preventDefault();
-      addItem();
+      if (document.getElementById("itemValue").value !== "") {
+        addItem();
+      }
     }
   });
