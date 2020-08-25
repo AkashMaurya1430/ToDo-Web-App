@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List</title>
+
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/solid.min.css"
+    />
+
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-light justify-content-center"
+      style="background-color: #5e35b1;"
+    >
+      <span
+        class="navbar-brand mb-0 h1"
+        style="color: rgb(255 255 255); letter-spacing: 2px;"
+        >Welcome to your ToDo List</span
+      >
+    </nav>
+
+    <!-- To Do LIST -->
+    <div class="container" id="">
+      <!-- Add Items Input -->
+      <div class="addItems mt-5 mb-3">
+        <div class="input-group col-12">
+          <input
+            type="text"
+            id="itemValue"
+            class="form-control"
+            placeholder="Title..."
+          />
+          <div class="input-group-append">
+            <button class="btn btn-primary" onclick="addItem()">
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task in todo list -->
+      <div class="tasks">
+        <ul class="taskList" id="taskList">
+          <!-- <li class="taskItems">
+            <div class="taskCheckbox">
+              <input type="checkbox" class="mt-2" value="" />
+            </div>
+            <div class="task">
+              <input class="taskTitle" type="text" value="Hello" readonly />
+              <div class="buttons">
+                <button class="btn btn-warning taskBtn mr-1">
+                  <i class="fas fa-pen"></i>
+                </button>
+                <button class="btn btn-danger taskBtn">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
