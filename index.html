@@ -28,12 +28,12 @@
   <body>
     <!-- Navbar -->
     <nav
-      class="navbar navbar-light justify-content-center"
+      class="navbar navbar-light justify-content-center p-2"
       style="background-color: #5e35b1;"
     >
       <span
         class="navbar-brand mb-0 h1"
-        style="color: rgb(255 255 255); letter-spacing: 2px;"
+        style="color: rgb(255 255 255); letter-spacing: 2px; font-size: 1.3rem;"
         >Welcome to your ToDo List</span
       >
     </nav>
@@ -41,16 +41,20 @@
     <!-- To Do LIST -->
     <div class="container" id="">
       <!-- Add Items Input -->
-      <div class="addItems mt-5 mb-3">
-        <div class="input-group col-12">
+      <div class="addItems mt-5 mb-4">
+        <div class="input-group col-12" style="height: 45px;">
           <input
             type="text"
             id="itemValue"
-            class="form-control"
+            class="form-control h-100"
             placeholder="Title..."
           />
           <div class="input-group-append">
-            <button class="btn btn-primary" onclick="addItem()">
+            <button
+              class="btn btn-primary"
+              onclick="addItem()"
+              style="padding: 0.375rem 1rem;"
+            >
               <i class="fas fa-plus"></i>
             </button>
           </div>

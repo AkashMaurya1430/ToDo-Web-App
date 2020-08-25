@@ -52,7 +52,7 @@ body {
   color: #ffff;
   background-color: #5cb85c;
   text-decoration: line-through;
-  transition: 0.4s ease;
+  transition: 0.4s ease-out;
 }
 
 .lineThrough {
