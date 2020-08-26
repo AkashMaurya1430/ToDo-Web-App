@@ -45,15 +45,23 @@ function checkCompleted(item) {
 // edit list item
 function editItem(item) {
   inputField = document.getElementById(`editInp${item}`);
-  inputField.readOnly = inputField.readOnly
-    ? (inputField.readOnly = false)
-    : (inputField.readOnly = true);
-  // if (inputField.readOnly) {
-  //   inputField.readOnly = false;
-  //   inputField.style.color = "#ffff";
-  // } else {
-  //   inputField.readOnly = true;
-  // }
+  // inputField.readOnly = inputField.readOnly
+  //   ? (inputField.readOnly = false)
+  //   : (inputField.readOnly = true);
+  if (inputField.readOnly) {
+    inputField.readOnly = false;
+    document.getElementById(`editBtn${item}`).classList.toggle("btn-success");
+    document.getElementById(`editBtn${item}`).classList.toggle("btn-warning");
+    document.getElementById(`editBtn${item}`).innerHTML =
+      '<i class="fas fa-check"></i>';
+  } else {
+    document.getElementById(`editBtn${item}`).classList.toggle("btn-success");
+    document.getElementById(`editBtn${item}`).classList.toggle("btn-warning");
+    document.getElementById(`editBtn${item}`).innerHTML =
+      '<i class="fas fa-pen"></i>';
+    inputField.readOnly = true;
+  }
+
   toDoList.find((someobject) => someobject.id == item).title = inputField.value;
   window.localStorage.setItem("toDoList", JSON.stringify(toDoList));
   inputField.focus();
@@ -75,7 +83,7 @@ function createList(item) {
       <div class="task">
       <input class="taskTitle" id="editInp${item.id}" type="text" value="${item.title}" readonly />
         <div class="buttons">
-          <div class="btn btn-warning taskBtn mr-1" onclick="editItem(${item.id})">
+          <div class="btn btn-warning taskBtn mr-1" id="editBtn${item.id}" onclick="editItem(${item.id})">
             <i class="fas fa-pen"></i>
           </div>
           <div class="btn btn-danger taskBtn" onclick="deleteItem(${item.id})">
