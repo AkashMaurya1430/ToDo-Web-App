@@ -13,6 +13,7 @@ function addItem() {
   const item = {
     title: input.value,
     id: Date.now(),
+    completed: false,
   };
   toDoList.push(item);
   window.localStorage.setItem("toDoList", JSON.stringify(toDoList));
@@ -36,6 +37,9 @@ function checkCompleted(item) {
   inputField = document.getElementById(`editInp${item}`);
   inputField.classList.toggle("lineThrough");
   inputField.readOnly = true;
+  object = toDoList.find((someobject) => someobject.id == item);
+  object.completed = object.completed ? false : true;
+  window.localStorage.setItem("toDoList", JSON.stringify(toDoList));
 }
 
 // edit list item
@@ -66,7 +70,7 @@ function createList(item) {
   node.setAttribute("id", item.id);
   node.innerHTML = `
       <div class="taskCheckbox">
-        <input type="checkbox" class="mt-2" value="" onclick="checkCompleted(${item.id})" />
+        <input type="checkbox" class="mt-2" id="checkbox${item.id}" onclick="checkCompleted(${item.id})" />
       </div>
       <div class="task">
       <input class="taskTitle" id="editInp${item.id}" type="text" value="${item.title}" readonly />
@@ -79,8 +83,13 @@ function createList(item) {
           </div>
         </div>
       </div>`;
-
   taskList.appendChild(node);
+  if (item.completed) {
+    checkCompleted(item.id);
+    item.completed = true;
+    document.getElementById(`checkbox${item.id}`).checked = true;
+    window.localStorage.setItem("toDoList", JSON.stringify(toDoList));
+  }
 }
 
 // Creating Items Based on previous list from local Storage
